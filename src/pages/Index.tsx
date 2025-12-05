@@ -1,13 +1,32 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import IntroAnimation from '@/components/IntroAnimation';
+import HeroSection from '@/components/HeroSection';
+import EngineSection from '@/components/EngineSection';
+import ObjectivesSection from '@/components/ObjectivesSection';
+import ModelsSection from '@/components/ModelsSection';
+import FeaturesSection from '@/components/FeaturesSection';
+import PredictionDemo from '@/components/PredictionDemo';
+import FooterSection from '@/components/FooterSection';
 
 const Index = () => {
+  const [showIntro, setShowIntro] = useState(true);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <>
+      {showIntro && (
+        <IntroAnimation onComplete={() => setShowIntro(false)} />
+      )}
+      
+      <main className={`transition-opacity duration-1000 ${showIntro ? 'opacity-0' : 'opacity-100'}`}>
+        <HeroSection />
+        <EngineSection />
+        <ObjectivesSection />
+        <ModelsSection />
+        <FeaturesSection />
+        <PredictionDemo />
+        <FooterSection />
+      </main>
+    </>
   );
 };
 
