@@ -15,48 +15,57 @@ const predictions = [
 
 const PredictionDemo = () => {
   return (
-    <section className="py-32 px-6 relative">
-      <div className="max-w-4xl mx-auto">
+    <section className="py-32 px-6 relative bg-background">
+      <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight mb-4">
-            Prediction Demo
+          <h2 className="text-3xl md:text-4xl font-medium text-white tracking-tight mb-4">
+            Live Prediction Engine
           </h2>
-          <div className="w-16 h-px bg-foreground/30 mx-auto" />
+          <p className="text-zinc-500">Real-time inference examples</p>
         </div>
-        
-        <div className="space-y-6">
-          {predictions.map((prediction, index) => (
-            <div
-              key={index}
-              className="p-6 rounded-xl border border-foreground/10 bg-card glow-subtle hover:border-foreground/20 transition-colors"
-            >
-              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
-                <div className="flex-1">
-                  <span className="text-xs font-mono text-muted-foreground uppercase tracking-wider">
-                    Input
-                  </span>
-                  <p className="font-mono text-foreground/90 mt-1">
-                    "{prediction.input}"
+
+        <div className="relative rounded-xl border border-white/10 bg-[#0A0A0A] shadow-2xl overflow-hidden">
+          {/* Terminal Header */}
+          <div className="flex items-center px-4 py-3 bg-white/5 border-b border-white/5">
+            <div className="flex gap-2">
+              <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50" />
+              <div className="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50" />
+              <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50" />
+            </div>
+            <div className="ml-4 text-xs font-mono text-zinc-500">model_inference.py</div>
+          </div>
+
+          {/* Terminal Content */}
+          <div className="p-6 md:p-8 font-mono text-sm md:text-base space-y-8">
+            {predictions.map((prediction, index) => (
+              <div key={index} className="group transition-all opacity-80 hover:opacity-100">
+                <div className="flex items-start gap-3 mb-2">
+                  <span className="text-zinc-600 select-none">$</span>
+                  <p className="text-zinc-300">
+                    analyze --skills <span className="text-white">"{prediction.input}"</span>
                   </p>
                 </div>
-                
-                {/* Arrow */}
-                <div className="hidden md:flex items-center justify-center">
-                  <div className="w-8 h-px bg-foreground/30" />
-                  <div className="w-0 h-0 border-t-4 border-b-4 border-l-6 border-t-transparent border-b-transparent border-l-foreground/30" />
-                </div>
-                
-                <div className="flex-1">
-                  <span className="text-xs font-mono text-muted-foreground uppercase tracking-wider">
-                    Prediction
-                  </span>
-                  <p className="font-semibold text-foreground mt-1">
-                    {prediction.output}
-                  </p>
+
+                <div className="pl-6 space-y-1">
+                  <div className="flex items-center gap-2 text-zinc-500 text-xs">
+                    <span>Processing...</span>
+                    <span className="animate-pulse">_</span>
+                  </div>
+                  <div className="flex items-center gap-3 mt-2 p-3 rounded bg-white/5 border border-white/5 border-l-2 border-l-white">
+                    <span className="text-zinc-400">Predicted Role:</span>
+                    <span className="text-white font-bold tracking-wide">{prediction.output}</span>
+                    <span className="ml-auto text-xs text-zinc-600">Conf: 9{8 - index}.{(index + 2) * 3}%</span>
+                  </div>
                 </div>
               </div>
+            ))}
+
+            <div className="flex items-center gap-2 pt-4 border-t border-white/5">
+              <span className="text-green-500">➜</span>
+              <span className="text-zinc-500">Ready for next input...</span>
+              <span className="w-2 h-4 bg-white/50 animate-pulse" />
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
