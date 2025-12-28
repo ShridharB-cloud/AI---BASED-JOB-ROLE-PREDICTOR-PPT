@@ -1,21 +1,10 @@
-import ParticleField from './ParticleField';
+import { WavyBackground } from '@/components/ui/wavy-background';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      <ParticleField />
-
-      {/* Background spotlight effect */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-white/10 to-transparent blur-[120px] pointer-events-none" />
-
-      {/* Geometric accent lines */}
-      <div className="absolute top-1/4 left-0 w-32 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-      <div className="absolute bottom-1/4 right-0 w-32 h-px bg-gradient-to-l from-transparent via-white/20 to-transparent" />
-
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-
-        <div className="relative flex flex-col items-center">
+    <div className="relative overflow-hidden">
+      <WavyBackground className="max-w-4xl mx-auto pb-40">
+        <div className="relative flex flex-col items-center text-center px-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8 animate-fade-in-up">
             <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
             <span className="text-xs font-mono text-white/70 tracking-wider">SYSTEM ONLINE</span>
@@ -56,10 +45,9 @@ const HeroSection = () => {
               <p className="text-xs text-zinc-500 font-mono uppercase tracking-wider">Roles</p>
             </div>
           </div>
-
         </div>
-      </div>
-    </section>
+      </WavyBackground>
+    </div>
   );
 };
 
