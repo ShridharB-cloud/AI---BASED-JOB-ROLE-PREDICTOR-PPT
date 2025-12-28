@@ -24,13 +24,7 @@ const FooterSection = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-center gap-3">
-          <span className="w-12 h-px bg-white/10" />
-          <span className="text-xs font-mono text-zinc-600 uppercase tracking-widest">
-            AI Job Role Predictor v2.0
-          </span>
-          <span className="w-12 h-px bg-white/10" />
-        </div>
+
       </div>
     </footer>
   );

@@ -5,17 +5,14 @@ const HeroSection = () => {
     <div className="relative overflow-hidden">
       <WavyBackground className="max-w-4xl mx-auto pb-40">
         <div className="relative flex flex-col items-center text-center px-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8 animate-fade-in-up">
-            <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-            <span className="text-xs font-mono text-white/70 tracking-wider">SYSTEM ONLINE</span>
-          </div>
+
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-medium text-white mb-8 tracking-tighter leading-tight animate-fade-in-up delay-100">
             <span className="opacity-90">AI-Based</span><br />
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/50">Job Role Predictor</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-zinc-400 mb-10 font-light max-w-2xl mx-auto animate-fade-in-up delay-200 opacity-0" style={{ animationFillMode: 'forwards' }}>
+          <p className="text-xl md:text-2xl text-white mb-10 font-bold max-w-3xl mx-auto animate-fade-in-up delay-200 opacity-0" style={{ animationFillMode: 'forwards' }}>
             Unlock your career potential. Our machine learning engine analyzes your skill set to predict your perfect job match with precision.
           </p>
 
@@ -24,13 +21,17 @@ const HeroSection = () => {
               href="https://ml-project-gzcuq3skbnznxa33ukikdo.streamlit.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative px-8 py-4 rounded-full bg-white text-black font-medium tracking-wide transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] inline-block"
+              className="relative inline-flex h-14 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group hover:scale-105 transition-transform duration-300 shadow-[0_0_20px_rgba(59,130,246,0.4)]"
             >
-              <span className="relative z-10">Start Prediction</span>
+              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-8 py-1 text-base font-bold text-white backdrop-blur-3xl transition-all group-hover:bg-zinc-900 gap-2 tracking-wide">
+                Start Prediction
+                <svg className="w-5 h-5 text-indigo-400 group-hover:text-indigo-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              </span>
             </a>
 
-            <button className="group px-8 py-4 rounded-full border border-white/20 bg-transparent text-white hover:bg-white/5 transition-all">
-              <span className="text-sm font-mono tracking-widest uppercase">Learn More</span>
+            <button className="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white text-base font-medium hover:bg-white/10 transition-all hover:border-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] backdrop-blur-sm tracking-wide">
+              Learn More
             </button>
           </div>
 

@@ -7,7 +7,7 @@ const EngineSection = () => {
         title=""
         description=""
         variant="tertiary"
-        className="h-auto py-32"
+        className="h-auto py-32 bg-black"
       >
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -17,7 +17,7 @@ const EngineSection = () => {
                 Understanding the Engine
               </h2>
               <div className="w-16 h-px bg-foreground/30" />
-              <p className="text-muted-foreground leading-relaxed text-lg">
+              <p className="text-white leading-relaxed text-lg">
                 Our model uses skill inputs and applies ML algorithms to classify job roles.
                 Using Logistic Regression and Random Forest, the system analyzes keywords
                 and predicts the best-fit career path.
