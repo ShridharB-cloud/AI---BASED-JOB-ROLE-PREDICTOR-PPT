@@ -1,8 +1,7 @@
-"use client";
-
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface BackgroundCirclesProps {
     title?: string;
@@ -106,7 +105,7 @@ export function BackgroundCircles({
 
     return (
         <div
-            className={clsx(
+            className={cn(
                 "relative flex h-screen w-full items-center justify-center overflow-hidden",
                 "bg-white dark:bg-black/5",
                 className
